@@ -237,4 +237,10 @@ Public Class FrmPrincipal
         frm.MdiParent = Me
         frm.Show()
     End Sub
+
+    Private Sub ReadCSVToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReadCSVToolStripMenuItem.Click
+        Dim frm As New FrmCSV
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
 End Class
