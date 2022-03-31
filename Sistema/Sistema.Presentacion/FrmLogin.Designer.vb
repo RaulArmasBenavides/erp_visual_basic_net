@@ -58,7 +58,7 @@ Partial Class FrmLogin
         'TxtEmail
         '
         Me.TxtEmail.Location = New System.Drawing.Point(158, 88)
-        Me.TxtEmail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TxtEmail.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtEmail.Name = "TxtEmail"
         Me.TxtEmail.Size = New System.Drawing.Size(170, 20)
         Me.TxtEmail.TabIndex = 2
@@ -66,7 +66,7 @@ Partial Class FrmLogin
         'TxtClave
         '
         Me.TxtClave.Location = New System.Drawing.Point(158, 131)
-        Me.TxtClave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TxtClave.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtClave.Name = "TxtClave"
         Me.TxtClave.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtClave.Size = New System.Drawing.Size(170, 20)
@@ -75,7 +75,7 @@ Partial Class FrmLogin
         'BtnAcceder
         '
         Me.BtnAcceder.Location = New System.Drawing.Point(80, 184)
-        Me.BtnAcceder.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnAcceder.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnAcceder.Name = "BtnAcceder"
         Me.BtnAcceder.Size = New System.Drawing.Size(104, 19)
         Me.BtnAcceder.TabIndex = 4
@@ -85,7 +85,7 @@ Partial Class FrmLogin
         'BtnCancelar
         '
         Me.BtnCancelar.Location = New System.Drawing.Point(206, 184)
-        Me.BtnCancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnCancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(115, 19)
         Me.BtnCancelar.TabIndex = 5
@@ -96,7 +96,7 @@ Partial Class FrmLogin
         '
         Me.PictureBox1.Image = Global.Sistema.Presentacion.My.Resources.Resources.login2
         Me.PictureBox1.Location = New System.Drawing.Point(354, 50)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(152, 159)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -107,7 +107,7 @@ Partial Class FrmLogin
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.DarkTurquoise
         Me.PictureBox2.Location = New System.Drawing.Point(1, 0)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(514, 45)
         Me.PictureBox2.TabIndex = 7
@@ -142,7 +142,7 @@ Partial Class FrmLogin
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Acceso"

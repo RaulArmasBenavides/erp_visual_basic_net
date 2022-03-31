@@ -49,7 +49,7 @@ Partial Class FrmCSV
         '
         'myRichTextBoxResult
         '
-        Me.myRichTextBoxResult.Location = New System.Drawing.Point(41, 476)
+        Me.myRichTextBoxResult.Location = New System.Drawing.Point(41, 390)
         Me.myRichTextBoxResult.Name = "myRichTextBoxResult"
         Me.myRichTextBoxResult.Size = New System.Drawing.Size(777, 319)
         Me.myRichTextBoxResult.TabIndex = 2
@@ -57,7 +57,7 @@ Partial Class FrmCSV
         '
         'RichTextBox2
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(836, 476)
+        Me.RichTextBox2.Location = New System.Drawing.Point(836, 390)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.Size = New System.Drawing.Size(777, 319)
         Me.RichTextBox2.TabIndex = 3
@@ -66,7 +66,7 @@ Partial Class FrmCSV
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(38, 447)
+        Me.Label1.Location = New System.Drawing.Point(38, 374)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(63, 13)
@@ -76,7 +76,7 @@ Partial Class FrmCSV
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(833, 447)
+        Me.Label2.Location = New System.Drawing.Point(833, 374)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(32, 13)

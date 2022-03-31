@@ -49,5 +49,10 @@
 
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtEmail.Text = "raul.armas@unmsm.edu.pe"
+        TxtClave.Text = "123"
+    End Sub
+
+    Private Sub TxtClave_TextChanged(sender As Object, e As EventArgs) Handles TxtClave.TextChanged
+
     End Sub
 End Class
