@@ -243,4 +243,10 @@ Public Class FrmPrincipal
         frm.MdiParent = Me
         frm.Show()
     End Sub
+
+    Private Sub JustifyTextToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JustifyTextToolStripMenuItem.Click
+        Dim frm As New FrmvbCr
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
 End Class

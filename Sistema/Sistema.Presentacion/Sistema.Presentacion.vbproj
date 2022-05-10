@@ -251,6 +251,12 @@
     <Compile Include="Reportes\FrmReporteComprobanteVenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Util\FrmvbCr.Designer.vb">
+      <DependentUpon>FrmvbCr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Util\FrmvbCr.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Variables.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -310,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptArticulos.rdlc" />
     <EmbeddedResource Include="Reportes\RptComprobanteVenta.rdlc" />
+    <EmbeddedResource Include="Util\FrmvbCr.resx">
+      <DependentUpon>FrmvbCr.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="DsSistema2.xsc">
