@@ -249,4 +249,10 @@ Public Class FrmPrincipal
         frm.MdiParent = Me
         frm.Show()
     End Sub
+
+    Private Sub S1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles S1ToolStripMenuItem.Click
+        Dim frm As New FrmShell
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
 End Class

@@ -59,6 +59,7 @@ Partial Class FrmPrincipal
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Form1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReadCSVToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.JustifyTextToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewMailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip = New System.Windows.Forms.ToolStrip()
@@ -67,7 +68,8 @@ Partial Class FrmPrincipal
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.TsBarraInferior = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.JustifyTextToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ShellToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.S1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -76,7 +78,7 @@ Partial Class FrmPrincipal
         'MenuStrip
         '
         Me.MenuStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MnuAlmacen, Me.MnuIngresos, Me.MnuVentas, Me.MnuAcceso, Me.MnuConsultas, Me.ViewMenu, Me.WindowsMenu, Me.MnuSalir, Me.HelpMenu, Me.Form1ToolStripMenuItem, Me.MailToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MnuAlmacen, Me.MnuIngresos, Me.MnuVentas, Me.MnuAcceso, Me.MnuConsultas, Me.ViewMenu, Me.WindowsMenu, Me.MnuSalir, Me.HelpMenu, Me.Form1ToolStripMenuItem, Me.MailToolStripMenuItem, Me.ShellToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.MdiWindowListItem = Me.WindowsMenu
         Me.MenuStrip.Name = "MenuStrip"
@@ -298,8 +300,14 @@ Partial Class FrmPrincipal
         'ReadCSVToolStripMenuItem
         '
         Me.ReadCSVToolStripMenuItem.Name = "ReadCSVToolStripMenuItem"
-        Me.ReadCSVToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReadCSVToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
         Me.ReadCSVToolStripMenuItem.Text = "Read CSV"
+        '
+        'JustifyTextToolStripMenuItem
+        '
+        Me.JustifyTextToolStripMenuItem.Name = "JustifyTextToolStripMenuItem"
+        Me.JustifyTextToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
+        Me.JustifyTextToolStripMenuItem.Text = "Justify Text"
         '
         'MailToolStripMenuItem
         '
@@ -311,7 +319,7 @@ Partial Class FrmPrincipal
         'NewMailToolStripMenuItem
         '
         Me.NewMailToolStripMenuItem.Name = "NewMailToolStripMenuItem"
-        Me.NewMailToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NewMailToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
         Me.NewMailToolStripMenuItem.Text = "New Mail"
         '
         'ToolStrip
@@ -360,11 +368,18 @@ Partial Class FrmPrincipal
         Me.TsBarraInferior.Size = New System.Drawing.Size(262, 17)
         Me.TsBarraInferior.Text = "Desarrollado por Raúl Marcelo Armas Benavides "
         '
-        'JustifyTextToolStripMenuItem
+        'ShellToolStripMenuItem
         '
-        Me.JustifyTextToolStripMenuItem.Name = "JustifyTextToolStripMenuItem"
-        Me.JustifyTextToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.JustifyTextToolStripMenuItem.Text = "Justify Text"
+        Me.ShellToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.S1ToolStripMenuItem})
+        Me.ShellToolStripMenuItem.Name = "ShellToolStripMenuItem"
+        Me.ShellToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.ShellToolStripMenuItem.Text = "Shell"
+        '
+        'S1ToolStripMenuItem
+        '
+        Me.S1ToolStripMenuItem.Name = "S1ToolStripMenuItem"
+        Me.S1ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.S1ToolStripMenuItem.Text = "S1"
         '
         'FrmPrincipal
         '
@@ -432,4 +447,6 @@ Partial Class FrmPrincipal
     Friend WithEvents MailToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NewMailToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents JustifyTextToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ShellToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents S1ToolStripMenuItem As ToolStripMenuItem
 End Class

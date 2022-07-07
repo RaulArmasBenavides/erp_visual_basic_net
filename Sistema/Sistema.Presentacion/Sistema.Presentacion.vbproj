@@ -251,6 +251,12 @@
     <Compile Include="Reportes\FrmReporteComprobanteVenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Util\FrmShell.Designer.vb">
+      <DependentUpon>FrmShell.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Util\FrmShell.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Util\FrmvbCr.Designer.vb">
       <DependentUpon>FrmvbCr.vb</DependentUpon>
     </Compile>
@@ -316,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptArticulos.rdlc" />
     <EmbeddedResource Include="Reportes\RptComprobanteVenta.rdlc" />
+    <EmbeddedResource Include="Util\FrmShell.resx">
+      <DependentUpon>FrmShell.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Util\FrmvbCr.resx">
       <DependentUpon>FrmvbCr.vb</DependentUpon>
     </EmbeddedResource>
