@@ -28,6 +28,7 @@ Partial Class FrmCSV
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'MyRichTextControl
@@ -83,11 +84,21 @@ Partial Class FrmCSV
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Email"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(1320, 59)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "Move"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'FrmCSV
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1958, 919)
+        Me.ClientSize = New System.Drawing.Size(1924, 919)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.RichTextBox2)
@@ -107,4 +118,5 @@ Partial Class FrmCSV
     Friend WithEvents RichTextBox2 As RichTextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
 End Class

@@ -204,4 +204,50 @@ Public Class FrmCSV
             MsgBox(ex.Message)
         End Try
     End Sub
+
+
+    Private Function InputFeedJSON() As String
+        Dim TempPath As String = String.Empty
+        Dim FullTempPath As String = String.Empty
+        Dim TargetPath As String = String.Empty
+        Dim FullTargetPath As String = String.Empty
+        Dim msFileName As String = String.Empty
+        ' TempPath = CStr(Me.GetServiceConfigValue("DVSIn_RootPath", "C:\BW2Services\AWP_Special\DVSIn")) & "\Download"
+        ' TargetPath = CStr(Me.GetServiceConfigValue("DVSIn_RootPath", "C:\BW2Services\AWP_Special\DVSIn")) & "\Drop"
+        TempPath = "C:\Users\raula\Downloads\move1"
+        TargetPath = "C:\Users\raula\Downloads\target1"
+        Try
+            Debug.WriteLine("=======START_ Input_Feed_JSON ==========")
+            'if the temp directory not exists ,create a new directory 
+            If Not Directory.Exists(TempPath) Then
+                MkDir(TempPath)
+            End If
+            msFileName = "my test" + "_" + Now.ToString("yyyyMMdd_hhmmss_fff") + ".txt"
+            FullTempPath = Path.Combine(TempPath, msFileName)
+            FullTargetPath = Path.Combine(TargetPath, msFileName)
+
+            'save in a temp directory
+            If Not File.Exists(FullTempPath) Then
+                File.WriteAllBytes(FullTempPath, System.Text.Encoding.Default.GetBytes(CStr("nirvana")))
+            End If
+
+            'create destination file
+            'If Not File.Exists(FullTargetPath) Then
+            '    File.Create(FullTargetPath).Dispose()
+            'End If
+
+            File.Move(FullTempPath, FullTargetPath)
+            'File.Copy(FullTempPath, FullTargetPath, True)
+            'copy file to new remote directory 
+            'Shell("cmd.exe /k NET USE \\Servidor\RecursoCompartido /user:Dominio\usuario password")
+        Catch ex As Exception
+            Debug.WriteLine("=======ERROR Input_Feed_JSON ==========" + ex.Message)
+        End Try
+        Debug.WriteLine("=======END Input_Feed_JSON ==========")
+        Return "SUCCESS"
+    End Function
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        InputFeedJSON()
+    End Sub
 End Class
