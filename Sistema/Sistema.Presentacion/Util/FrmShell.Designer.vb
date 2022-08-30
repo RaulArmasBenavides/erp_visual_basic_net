@@ -26,13 +26,14 @@ Partial Class FrmShell
         Me.TxtEmail = New System.Windows.Forms.TextBox()
         Me.btnOpen = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnGenerar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnShell1
         '
-        Me.btnShell1.Location = New System.Drawing.Point(508, 34)
+        Me.btnShell1.Location = New System.Drawing.Point(943, 56)
         Me.btnShell1.Name = "btnShell1"
-        Me.btnShell1.Size = New System.Drawing.Size(75, 23)
+        Me.btnShell1.Size = New System.Drawing.Size(100, 23)
         Me.btnShell1.TabIndex = 3
         Me.btnShell1.Text = "Shell"
         Me.btnShell1.UseVisualStyleBackColor = True
@@ -42,32 +43,42 @@ Partial Class FrmShell
         Me.TxtEmail.Location = New System.Drawing.Point(44, 37)
         Me.TxtEmail.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtEmail.Name = "TxtEmail"
-        Me.TxtEmail.Size = New System.Drawing.Size(423, 20)
+        Me.TxtEmail.Size = New System.Drawing.Size(837, 20)
         Me.TxtEmail.TabIndex = 4
         '
         'btnOpen
         '
-        Me.btnOpen.Location = New System.Drawing.Point(508, 63)
+        Me.btnOpen.Location = New System.Drawing.Point(943, 85)
         Me.btnOpen.Name = "btnOpen"
-        Me.btnOpen.Size = New System.Drawing.Size(75, 23)
+        Me.btnOpen.Size = New System.Drawing.Size(100, 23)
         Me.btnOpen.TabIndex = 5
         Me.btnOpen.Text = "Open"
         Me.btnOpen.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(508, 92)
+        Me.Button1.Location = New System.Drawing.Point(943, 114)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(115, 23)
+        Me.Button1.Size = New System.Drawing.Size(100, 23)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Print Process"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'btnGenerar
+        '
+        Me.btnGenerar.Location = New System.Drawing.Point(943, 143)
+        Me.btnGenerar.Name = "btnGenerar"
+        Me.btnGenerar.Size = New System.Drawing.Size(100, 23)
+        Me.btnGenerar.TabIndex = 7
+        Me.btnGenerar.Text = "Generar XML"
+        Me.btnGenerar.UseVisualStyleBackColor = True
         '
         'FrmShell
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1084, 553)
+        Me.Controls.Add(Me.btnGenerar)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnOpen)
         Me.Controls.Add(Me.TxtEmail)
@@ -83,4 +94,5 @@ Partial Class FrmShell
     Friend WithEvents TxtEmail As TextBox
     Friend WithEvents btnOpen As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents btnGenerar As Button
 End Class
