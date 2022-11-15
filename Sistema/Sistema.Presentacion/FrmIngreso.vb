@@ -124,7 +124,7 @@
         Dim TotalImpuesto As Decimal = 0
 
         For Each FilaTemp As DataGridViewRow In DgvDetalle.Rows
-            Total = Total + CDec(FilaTemp.Cells("importe").Value)
+            Total += CDec(FilaTemp.Cells("importe").Value)
         Next
 
         SubTotal = Math.Round((Total / (1 + TxtImpuesto.Text)), 2)

@@ -133,7 +133,7 @@
         Dim TotalImpuesto As Decimal = 0
 
         For Each FilaTemp As DataGridViewRow In DgvDetalle.Rows
-            Total = Total + CDec(FilaTemp.Cells("importe").Value)
+            Total += CDec(FilaTemp.Cells("importe").Value)
         Next
 
         SubTotal = Math.Round((Total / (1 + TxtImpuesto.Text)), 2)
@@ -193,12 +193,13 @@
 
     Private Sub DgvArticulos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvArticulos.CellDoubleClick
         Try
-            Dim Obj As New Entidades.Articulo
-            Obj.IdArticulo = DgvArticulos.SelectedCells.Item(0).Value
-            Obj.Codigo = DgvArticulos.SelectedCells.Item(3).Value
-            Obj.Nombre = DgvArticulos.SelectedCells.Item(4).Value
-            Obj.PrecioVenta = DgvArticulos.SelectedCells.Item(5).Value
-            Obj.Stock = DgvArticulos.SelectedCells.Item(6).Value
+            Dim Obj As New Entidades.Articulo With {
+                .IdArticulo = DgvArticulos.SelectedCells.Item(0).Value,
+                .Codigo = DgvArticulos.SelectedCells.Item(3).Value,
+                .Nombre = DgvArticulos.SelectedCells.Item(4).Value,
+                .PrecioVenta = DgvArticulos.SelectedCells.Item(5).Value,
+                .Stock = DgvArticulos.SelectedCells.Item(6).Value
+            }
             Me.AgregarDetalle(Obj)
         Catch ex As Exception
             MsgBox(ex.Message)

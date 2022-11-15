@@ -29,6 +29,7 @@ Partial Class FrmvbCr
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnRetrieveLists2 = New System.Windows.Forms.Button()
         Me.btnRetrieveLists3 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'MyRichTextControl
@@ -92,11 +93,21 @@ Partial Class FrmvbCr
         Me.btnRetrieveLists3.Text = "Leer Listas 3"
         Me.btnRetrieveLists3.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(1202, 107)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Exportar Listas"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'FrmvbCr
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1413, 527)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnRetrieveLists3)
         Me.Controls.Add(Me.btnRetrieveLists2)
         Me.Controls.Add(Me.btnLimpiar)
@@ -117,4 +128,5 @@ Partial Class FrmvbCr
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents btnRetrieveLists2 As Button
     Friend WithEvents btnRetrieveLists3 As Button
+    Friend WithEvents Button1 As Button
 End Class

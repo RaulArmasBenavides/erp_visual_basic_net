@@ -6,8 +6,9 @@ Public Class DRol
         Try
             Dim Resultado As SqlDataReader
             Dim Tabla As New DataTable
-            Dim Comando As New SqlCommand("rol_listar", MyBase.conn)
-            Comando.CommandType = CommandType.StoredProcedure
+            Dim Comando As New SqlCommand("rol_listar", MyBase.conn) With {
+                .CommandType = CommandType.StoredProcedure
+            }
             MyBase.conn.Open()
             Resultado = Comando.ExecuteReader()
             Tabla.Load(Resultado)

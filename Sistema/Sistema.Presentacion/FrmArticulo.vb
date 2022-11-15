@@ -2,7 +2,7 @@
 Public Class FrmArticulo
     Private RutaOrigen As String
     Private RutaDestino As String
-    Private Directorio As String = "D:\sistema\"
+    Private ReadOnly Directorio As String = "D:\sistema\"
     Private Sub Formato()
         DgvListado.Columns(0).Visible = False
         DgvListado.Columns(2).Visible = False
@@ -77,8 +77,9 @@ Public Class FrmArticulo
     End Sub
 
     Private Sub BtnCargarImagen_Click(sender As Object, e As EventArgs) Handles BtnCargarImagen.Click
-        Dim File As New OpenFileDialog()
-        File.Filter = "Image Files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png"
+        Dim File As New OpenFileDialog With {
+            .Filter = "Image Files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png"
+        }
         If File.ShowDialog() = DialogResult.OK Then
             PicImagen.Image = Image.FromFile(File.FileName)
             RutaOrigen = File.FileName

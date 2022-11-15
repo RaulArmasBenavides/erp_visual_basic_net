@@ -57,7 +57,7 @@ Public Class FrmCSV
                     End If
                     tablaDatos.Columns.Add(New DataColumn(valor))
                     lista.Add(valor)
-                    numero = numero + 1
+                    numero += 1
                 Next
                 etiquetaTitulosFinal = lista.ToArray()
             End If
@@ -181,9 +181,11 @@ Public Class FrmCSV
                     End If
                     dataGridS(campoActual) = valor
                 Next
-                obj1 = New ItemChart()
-                obj1.arg = dataGridS(0)
-                obj1.val = dataGridS(1)
+
+                obj1 = New ItemChart With {
+                    .arg = dataGridS(0),
+                    .val = dataGridS(1)
+                }
                 objPopulationList.Add(obj1)
             Next
         End If

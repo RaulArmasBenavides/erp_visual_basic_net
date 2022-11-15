@@ -227,8 +227,9 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub TsVentas_Click(sender As Object, e As EventArgs) Handles TsVentas.Click
-        Dim frm As New FrmVenta
-        frm.MdiParent = Me
+        Dim frm As New FrmVenta With {
+            .MdiParent = Me
+        }
         frm.Show()
     End Sub
 

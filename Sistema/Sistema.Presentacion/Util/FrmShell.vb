@@ -13,13 +13,14 @@ Public Class FrmShell
     End Sub
 
     Private Sub btnOpen_Click(sender As Object, e As EventArgs) Handles btnOpen.Click
-        Dim Browse As New System.Windows.Forms.OpenFileDialog
-        Browse.Title = "Test"
-        Browse.DereferenceLinks = True
-        Browse.CheckFileExists = True
-        Browse.Multiselect = False
-        Browse.DefaultExt = "vcf"
-        Browse.Filter = "vCard Files (*.vcf)|*.vcf"
+        Dim Browse As New System.Windows.Forms.OpenFileDialog With {
+            .Title = "Test",
+            .DereferenceLinks = True,
+            .CheckFileExists = True,
+            .Multiselect = False,
+            .DefaultExt = "vcf",
+            .Filter = "vCard Files (*.vcf)|*.vcf"
+        }
         If Browse.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
             MyFilePathOpen = Browse.FileName
         End If
@@ -156,8 +157,9 @@ Public Class FrmShell
         p.charactervers = "3.1"
 
         'Create XmlWriterSettings.
-        Dim settings As XmlWriterSettings = New XmlWriterSettings()
-        settings.Indent = True
+        Dim settings As XmlWriterSettings = New XmlWriterSettings With {
+            .Indent = True
+        }
         'p = GetPUBTInfo(text)
         Using w As XmlWriter = XmlWriter.Create("Employees7.xml", settings)
             w.WriteStartElement("NewsML")
