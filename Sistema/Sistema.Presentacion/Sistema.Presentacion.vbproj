@@ -11,7 +11,7 @@
     <AssemblyName>Sistema.Presentacion</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -33,6 +33,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -82,21 +83,6 @@
     <Reference Include="Aspose.Cells, Version=22.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <HintPath>..\packages\Aspose.Cells.22.9.0\lib\net40\Aspose.Cells.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
       <Private>True</Private>
@@ -104,6 +90,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services" />
@@ -221,6 +208,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -232,21 +220,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Reportes\DsSistema21.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DsSistema21.xsd</DependentUpon>
+    <Compile Include="Util\FrmAD.Designer.vb">
+      <DependentUpon>FrmAD.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\FrmReporteArticulos.Designer.vb">
-      <DependentUpon>FrmReporteArticulos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\FrmReporteArticulos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\FrmReporteComprobanteVenta.Designer.vb">
-      <DependentUpon>FrmReporteComprobanteVenta.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\FrmReporteComprobanteVenta.vb">
+    <Compile Include="Util\FrmAD.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Util\FrmShell.Designer.vb">
@@ -312,14 +289,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\FrmReporteArticulos.resx">
-      <DependentUpon>FrmReporteArticulos.vb</DependentUpon>
+    <EmbeddedResource Include="Util\FrmAD.resx">
+      <DependentUpon>FrmAD.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\FrmReporteComprobanteVenta.resx">
-      <DependentUpon>FrmReporteComprobanteVenta.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\RptArticulos.rdlc" />
-    <EmbeddedResource Include="Reportes\RptComprobanteVenta.rdlc" />
     <EmbeddedResource Include="Util\FrmShell.resx">
       <DependentUpon>FrmShell.vb</DependentUpon>
     </EmbeddedResource>
@@ -350,18 +322,6 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Reportes\DsSistema21.xsc">
-      <DependentUpon>DsSistema21.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DsSistema21.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DsSistema21.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="Reportes\DsSistema21.xss">
-      <DependentUpon>DsSistema21.xsd</DependentUpon>
-    </None>
-    <None Include="Sistema.Presentacion_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sistema.Entidades\Sistema.Entidades.vbproj">

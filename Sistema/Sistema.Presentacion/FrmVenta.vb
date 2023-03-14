@@ -333,7 +333,7 @@
     Private Sub BtnVerComprobante_Click(sender As Object, e As EventArgs) Handles BtnVerComprobante.Click
         Try
             Variables.IdVenta = DgvListado.SelectedCells.Item(1).Value
-            FrmReporteComprobanteVenta.ShowDialog()
+            'FrmReporteComprobanteVenta.ShowDialog()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

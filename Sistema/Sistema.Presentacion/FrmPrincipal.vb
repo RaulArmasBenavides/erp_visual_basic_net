@@ -256,4 +256,10 @@ Public Class FrmPrincipal
         frm.MdiParent = Me
         frm.Show()
     End Sub
+
+    Private Sub LDAPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LDAPToolStripMenuItem.Click
+        Dim frm As New FrmAD
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
 End Class

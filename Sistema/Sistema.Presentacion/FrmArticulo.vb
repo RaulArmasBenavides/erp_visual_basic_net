@@ -265,6 +265,6 @@ Public Class FrmArticulo
     End Sub
 
     Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
-        FrmReporteArticulos.ShowDialog()
+        'FrmReporteArticulos.ShowDialog()
     End Sub
 End Class
