@@ -262,4 +262,8 @@ Public Class FrmPrincipal
         frm.MdiParent = Me
         frm.Show()
     End Sub
+
+    Private Sub HelpMenu_Click(sender As Object, e As EventArgs) Handles HelpMenu.Click
+
+    End Sub
 End Class

@@ -58,6 +58,7 @@ Partial Class FrmPrincipal
         Me.ShellToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.S1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ActiveDirectoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LDAPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IndexToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -71,7 +72,6 @@ Partial Class FrmPrincipal
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.TsBarraInferior = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.LDAPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -297,6 +297,12 @@ Partial Class FrmPrincipal
         Me.ActiveDirectoryToolStripMenuItem.Size = New System.Drawing.Size(103, 20)
         Me.ActiveDirectoryToolStripMenuItem.Text = "Active Directory"
         '
+        'LDAPToolStripMenuItem
+        '
+        Me.LDAPToolStripMenuItem.Name = "LDAPToolStripMenuItem"
+        Me.LDAPToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
+        Me.LDAPToolStripMenuItem.Text = "LDAP"
+        '
         'HelpMenu
         '
         Me.HelpMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContentsToolStripMenuItem, Me.IndexToolStripMenuItem, Me.SearchToolStripMenuItem, Me.ToolStripSeparator8, Me.AboutToolStripMenuItem})
@@ -308,7 +314,7 @@ Partial Class FrmPrincipal
         '
         Me.ContentsToolStripMenuItem.Name = "ContentsToolStripMenuItem"
         Me.ContentsToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F1), System.Windows.Forms.Keys)
-        Me.ContentsToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.ContentsToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
         Me.ContentsToolStripMenuItem.Text = "&Contents"
         '
         'IndexToolStripMenuItem
@@ -316,7 +322,7 @@ Partial Class FrmPrincipal
         Me.IndexToolStripMenuItem.Image = CType(resources.GetObject("IndexToolStripMenuItem.Image"), System.Drawing.Image)
         Me.IndexToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.IndexToolStripMenuItem.Name = "IndexToolStripMenuItem"
-        Me.IndexToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.IndexToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
         Me.IndexToolStripMenuItem.Text = "&Index"
         '
         'SearchToolStripMenuItem
@@ -324,18 +330,18 @@ Partial Class FrmPrincipal
         Me.SearchToolStripMenuItem.Image = CType(resources.GetObject("SearchToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SearchToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
-        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
         Me.SearchToolStripMenuItem.Text = "&Search"
         '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(165, 6)
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(181, 6)
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
         Me.AboutToolStripMenuItem.Text = "&About ..."
         '
         'MnuSalir
@@ -389,12 +395,6 @@ Partial Class FrmPrincipal
         Me.TsBarraInferior.Name = "TsBarraInferior"
         Me.TsBarraInferior.Size = New System.Drawing.Size(262, 17)
         Me.TsBarraInferior.Text = "Desarrollado por Raúl Marcelo Armas Benavides "
-        '
-        'LDAPToolStripMenuItem
-        '
-        Me.LDAPToolStripMenuItem.Name = "LDAPToolStripMenuItem"
-        Me.LDAPToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.LDAPToolStripMenuItem.Text = "LDAP"
         '
         'FrmPrincipal
         '
