@@ -52,14 +52,14 @@ Partial Class FrmAD
         '
         'txtProperty
         '
-        Me.txtProperty.Location = New System.Drawing.Point(127, 259)
+        Me.txtProperty.Location = New System.Drawing.Point(127, 263)
         Me.txtProperty.Name = "txtProperty"
         Me.txtProperty.Size = New System.Drawing.Size(326, 20)
         Me.txtProperty.TabIndex = 12
         '
         'btnConnect
         '
-        Me.btnConnect.Location = New System.Drawing.Point(500, 46)
+        Me.btnConnect.Location = New System.Drawing.Point(1124, 46)
         Me.btnConnect.Margin = New System.Windows.Forms.Padding(2)
         Me.btnConnect.Name = "btnConnect"
         Me.btnConnect.Size = New System.Drawing.Size(156, 20)
@@ -71,7 +71,7 @@ Partial Class FrmAD
         '
         Me.TxtQuery.Location = New System.Drawing.Point(127, 72)
         Me.TxtQuery.Name = "TxtQuery"
-        Me.TxtQuery.Size = New System.Drawing.Size(326, 20)
+        Me.TxtQuery.Size = New System.Drawing.Size(949, 20)
         Me.TxtQuery.TabIndex = 13
         '
         'Label1
@@ -98,12 +98,12 @@ Partial Class FrmAD
         '
         Me.txtPath.Location = New System.Drawing.Point(127, 46)
         Me.txtPath.Name = "txtPath"
-        Me.txtPath.Size = New System.Drawing.Size(326, 20)
+        Me.txtPath.Size = New System.Drawing.Size(949, 20)
         Me.txtPath.TabIndex = 16
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(500, 70)
+        Me.Button2.Location = New System.Drawing.Point(1124, 72)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(156, 20)

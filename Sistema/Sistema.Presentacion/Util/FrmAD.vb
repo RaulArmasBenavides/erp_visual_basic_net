@@ -56,7 +56,6 @@ Public Class FrmAD
     '    Return ldapConnection
     'End Function
 
-
     Private Function createDirectoryEntry(ByVal path As String, ByVal query As String) As DirectoryEntry
         Dim ldapConnection As DirectoryEntry
         If b_UseCredentials Then
@@ -73,7 +72,6 @@ Public Class FrmAD
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         ClearFields()
     End Sub
-
 
     Private Sub ClearFields()
         txtPath.Text = String.Empty
@@ -102,5 +100,11 @@ Public Class FrmAD
         TL(3).SetToolTip(Me.txtPath, "Path of the Active Directory ( example :" & "LDAP://bw2test.com" & ")")
         TL(4) = New ToolTip
         TL(4).SetToolTip(Me.TxtQuery, " LDAP Query to read ( example :" & "LDAP://OU=Users,OU=Hosting,DC=bw2dev,DC=local" & ")")
+        DefaultValues()
+    End Sub
+
+    Private Sub DefaultValues()
+        TxtQuery.Text = "LDAP://OU=Stellverstretungen,OU=Lehrpersonen,OU=Benutzer,DC=sekeinshoefe,DC=ch"
+        txtPath.Text = "LDAP://seh.sekeinshoefe.ch"
     End Sub
 End Class
