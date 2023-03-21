@@ -39,23 +39,26 @@ Partial Class FrmAD
         Me.Label5 = New System.Windows.Forms.Label()
         Me.chkCredentials = New System.Windows.Forms.CheckBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.PanelCredentials.SuspendLayout()
         Me.SuspendLayout()
         '
         'txt_result
         '
-        Me.txt_result.Location = New System.Drawing.Point(59, 299)
+        Me.txt_result.Location = New System.Drawing.Point(59, 277)
         Me.txt_result.Name = "txt_result"
-        Me.txt_result.Size = New System.Drawing.Size(1221, 501)
+        Me.txt_result.Size = New System.Drawing.Size(1330, 531)
         Me.txt_result.TabIndex = 7
+        Me.txt_result.Tag = ""
         Me.txt_result.Text = ""
         '
         'txtProperty
         '
-        Me.txtProperty.Location = New System.Drawing.Point(127, 263)
+        Me.txtProperty.Location = New System.Drawing.Point(954, 130)
         Me.txtProperty.Name = "txtProperty"
         Me.txtProperty.Size = New System.Drawing.Size(326, 20)
         Me.txtProperty.TabIndex = 12
+        Me.txtProperty.Visible = False
         '
         'btnConnect
         '
@@ -114,27 +117,29 @@ Partial Class FrmAD
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(56, 266)
+        Me.Label3.Location = New System.Drawing.Point(893, 133)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(46, 13)
         Me.Label3.TabIndex = 18
         Me.Label3.Text = "Property"
+        Me.Label3.Visible = False
         '
         'chkAllProperties
         '
         Me.chkAllProperties.AutoSize = True
-        Me.chkAllProperties.Location = New System.Drawing.Point(59, 236)
+        Me.chkAllProperties.Location = New System.Drawing.Point(896, 107)
         Me.chkAllProperties.Name = "chkAllProperties"
         Me.chkAllProperties.Size = New System.Drawing.Size(114, 17)
         Me.chkAllProperties.TabIndex = 19
         Me.chkAllProperties.Text = "Read all properties"
         Me.chkAllProperties.UseVisualStyleBackColor = True
+        Me.chkAllProperties.Visible = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(89, 28)
+        Me.Label4.Location = New System.Drawing.Point(28, 23)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(29, 13)
@@ -147,14 +152,14 @@ Partial Class FrmAD
         Me.PanelCredentials.Controls.Add(Me.TxtUser)
         Me.PanelCredentials.Controls.Add(Me.Label5)
         Me.PanelCredentials.Controls.Add(Me.Label4)
-        Me.PanelCredentials.Location = New System.Drawing.Point(59, 130)
+        Me.PanelCredentials.Location = New System.Drawing.Point(208, 107)
         Me.PanelCredentials.Name = "PanelCredentials"
-        Me.PanelCredentials.Size = New System.Drawing.Size(394, 100)
+        Me.PanelCredentials.Size = New System.Drawing.Size(338, 100)
         Me.PanelCredentials.TabIndex = 21
         '
         'TxtPassword
         '
-        Me.TxtPassword.Location = New System.Drawing.Point(160, 55)
+        Me.TxtPassword.Location = New System.Drawing.Point(99, 50)
         Me.TxtPassword.Name = "TxtPassword"
         Me.TxtPassword.Size = New System.Drawing.Size(216, 20)
         Me.TxtPassword.TabIndex = 23
@@ -162,7 +167,7 @@ Partial Class FrmAD
         '
         'TxtUser
         '
-        Me.TxtUser.Location = New System.Drawing.Point(160, 21)
+        Me.TxtUser.Location = New System.Drawing.Point(99, 16)
         Me.TxtUser.Name = "TxtUser"
         Me.TxtUser.Size = New System.Drawing.Size(216, 20)
         Me.TxtUser.TabIndex = 22
@@ -170,7 +175,7 @@ Partial Class FrmAD
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(76, 58)
+        Me.Label5.Location = New System.Drawing.Point(15, 53)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 13)
@@ -182,9 +187,9 @@ Partial Class FrmAD
         Me.chkCredentials.AutoSize = True
         Me.chkCredentials.Location = New System.Drawing.Point(59, 107)
         Me.chkCredentials.Name = "chkCredentials"
-        Me.chkCredentials.Size = New System.Drawing.Size(100, 17)
+        Me.chkCredentials.Size = New System.Drawing.Size(143, 17)
         Me.chkCredentials.TabIndex = 22
-        Me.chkCredentials.Text = "Use Credentials"
+        Me.chkCredentials.Text = "Connect with Credentials"
         Me.chkCredentials.UseVisualStyleBackColor = True
         '
         'Label6
@@ -193,15 +198,26 @@ Partial Class FrmAD
         Me.Label6.Location = New System.Drawing.Point(48, 21)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(111, 13)
+        Me.Label6.Size = New System.Drawing.Size(147, 13)
         Me.Label6.TabIndex = 23
-        Me.Label6.Text = "Connection vía LDAP"
+        Me.Label6.Text = "Connection by LDAP protocol"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(56, 248)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(48, 13)
+        Me.Label7.TabIndex = 24
+        Me.Label7.Text = "Results :"
         '
         'FrmAD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1341, 852)
+        Me.ClientSize = New System.Drawing.Size(1423, 861)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.chkCredentials)
         Me.Controls.Add(Me.PanelCredentials)
@@ -241,4 +257,5 @@ Partial Class FrmAD
     Friend WithEvents Label5 As Label
     Friend WithEvents chkCredentials As CheckBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
 End Class

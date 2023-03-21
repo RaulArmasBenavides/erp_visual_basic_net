@@ -3,47 +3,104 @@
 Public Class FrmAD
 
     Private b_UseCredentials As Boolean = False
+    Const UF_DISABLED As Integer = &H2
+    Private Function IsUserActive(ByVal Flag As Integer) As Boolean
+        'If (de.NativeGuid Is Nothing) Then Return False
+        'Dim flags As Integer = Convert.ToInt32(de.Properties("userAccountControl").Value)
+        Return Not ((Flag & UF_DISABLED) = UF_DISABLED)
+    End Function
     Private Sub button1_Click(sender As Object, e As EventArgs) Handles btnConnect.Click
         Dim msproperty As String = txtProperty.Text
         Dim msquery As String = TxtQuery.Text.Trim
         Dim mspath As String = txtPath.Text.Trim
         Try
             Dim myLdapConnection As DirectoryEntry = createDirectoryEntry(mspath, msquery)
-            Dim search As DirectorySearcher = New DirectorySearcher(myLdapConnection)
+            Dim search As New DirectorySearcher(myLdapConnection)
             search.PropertiesToLoad.Add("cn")
-            search.PropertiesToLoad.Add(msproperty)
+            search.PropertiesToLoad.Add("userPrincipalName")
+            search.PropertiesToLoad.Add("sn")
+            search.PropertiesToLoad.Add("telephoneNumber")
+            search.PropertiesToLoad.Add("description")
+            search.PropertiesToLoad.Add("mail")
+            search.PropertiesToLoad.Add("givenname")
+            search.PropertiesToLoad.Add("homedirectory")
+            search.PropertiesToLoad.Add("homedrive")
+            search.PropertiesToLoad.Add("department")
+            search.PropertiesToLoad.Add("physicalDeliveryOfficeName")
+            search.PropertiesToLoad.Add("userAccountControl")
+
             Dim allUsers As SearchResultCollection = search.FindAll()
-            If Not chkAllProperties.Checked Then
-                If msproperty <> "" Then
-                    Dim ADInfo As String = "USERS BW2 ACTIVE DIRECTORY"
-                    For Each result As SearchResult In allUsers
-                        If (result.Properties.Contains("cn") AndAlso result.Properties.Contains(msproperty)) Then
-                            ADInfo = ADInfo + Environment.NewLine + result.Properties(msproperty)(0).ToString()
-                        End If
-                        txt_result.Text = ADInfo
-                    Next
+            Dim ADInfo As String = "USERS BW2 ACTIVE DIRECTORY"
+            For Each result As SearchResult In allUsers
+
+                If (result.Properties.Contains("cn") AndAlso result.Properties.Contains("givenname")) Then
+                    ADInfo = ADInfo + Environment.NewLine + "Nachname " + result.Properties("givenname")(0).ToString()
                 End If
-            Else
-                'show all properties
-                Dim ADInfo As String = "USERS BW2 ACTIVE DIRECTORY (ALL PROPERTIES)"
-                For Each result As SearchResult In allUsers
-                    For Each itemvprop As ICollection In result.Properties.Values
-                        For Each item As String In itemvprop
-                            'ADInfo = ADInfo  + Environment.NewLine
-                            ADInfo = ADInfo + Environment.NewLine + item
-                            ADInfo = ADInfo + "-------------------------------------" + Environment.NewLine
-                        Next
-                    Next
-                    'ADInfo = ADInfo + Environment.NewLine + 
-                    'If (result.Properties.Contains("cn") AndAlso result.Properties.Contains(msproperty)) Then
-                    '    ADInfo = ADInfo + Environment.NewLine + result.Properties(msproperty)(0).ToString()
-                    'End If
-                    txt_result.Text = ADInfo
-                Next
-            End If
+                If (result.Properties.Contains("cn") AndAlso result.Properties.Contains("sn")) Then
+                    ADInfo = ADInfo + Environment.NewLine + "Vorname " + result.Properties("sn")(0).ToString()
+                End If
+                If (result.Properties.Contains("cn") AndAlso result.Properties.Contains("mail")) Then
+                    ADInfo = ADInfo + Environment.NewLine + "Mail " + result.Properties("mail")(0).ToString()
+                End If
+                If (result.Properties.Contains("cn") AndAlso result.Properties.Contains("userPrincipalName")) Then
+                    ADInfo = ADInfo + Environment.NewLine + "Benutzernamen " + result.Properties("userPrincipalName")(0).ToString()
+                End If
+                If (result.Properties.Contains("cn") AndAlso result.Properties.Contains("physicalDeliveryOfficeName")) Then
+                    ADInfo = ADInfo + Environment.NewLine + "Abteilung (Office) " + result.Properties("physicalDeliveryOfficeName")(0).ToString()
+                End If
+                If (result.Properties.Contains("cn") AndAlso result.Properties.Contains("department")) Then
+                    ADInfo = ADInfo + Environment.NewLine + "Standort  (department) " + result.Properties("department")(0).ToString()
+                End If
+                If (result.Properties.Contains("cn") AndAlso result.Properties.Contains("userAccountControl")) Then
+                    ADInfo = ADInfo + Environment.NewLine + " Is Active " + Me.IsUserActive(Convert.ToInt32(result.Properties("userAccountControl")(0))).ToString()  'result.Properties("userAccountControl")(0).ToString()
+                End If
+                If (result.Properties.Contains("cn") AndAlso result.Properties.Contains("telephoneNumber")) Then
+                    ADInfo = ADInfo + Environment.NewLine + "Phone " + result.Properties("telephoneNumber")(0).ToString()
+                End If
+                If (result.Properties.Contains("cn") AndAlso result.Properties.Contains("description")) Then
+                    ADInfo = ADInfo + Environment.NewLine + result.Properties("description")(0).ToString()
+                End If
+                If (result.Properties.Contains("cn") AndAlso result.Properties.Contains("homedirectory")) Then
+                    ADInfo = ADInfo + Environment.NewLine + result.Properties("homedirectory")(0).ToString()
+                End If
+                If (result.Properties.Contains("cn") AndAlso result.Properties.Contains("homedrive")) Then
+                    ADInfo = ADInfo + Environment.NewLine + result.Properties("homedrive")(0).ToString()
+                End If
+                ADInfo = ADInfo + Environment.NewLine
+                txt_result.Text = ADInfo
+            Next
+
+            'If Not chkAllProperties.Checked Then
+            '    If msproperty <> "" Then
+            '        Dim ADInfo As String = "USERS BW2 ACTIVE DIRECTORY"
+            '        For Each result As SearchResult In allUsers
+            '            If (result.Properties.Contains("cn") AndAlso result.Properties.Contains(msproperty)) Then
+            '                ADInfo = ADInfo + Environment.NewLine + result.Properties(msproperty)(0).ToString()
+            '            End If
+            '            txt_result.Text = ADInfo
+            '        Next
+            '    End If
+            'Else
+            '    'show all properties
+            '    Dim ADInfo As String = "USERS BW2 ACTIVE DIRECTORY (ALL PROPERTIES)"
+            '    For Each result As SearchResult In allUsers
+            '        For Each itemvprop As ICollection In result.Properties.Values
+            '            For Each item As String In itemvprop
+            '                'ADInfo = ADInfo  + Environment.NewLine
+            '                ADInfo = ADInfo + Environment.NewLine + item
+            '                ADInfo = ADInfo + "-------------------------------------" + Environment.NewLine
+            '            Next
+            '        Next
+            '        'ADInfo = ADInfo + Environment.NewLine + 
+            '        'If (result.Properties.Contains("cn") AndAlso result.Properties.Contains(msproperty)) Then
+            '        '    ADInfo = ADInfo + Environment.NewLine + result.Properties(msproperty)(0).ToString()
+            '        'End If
+            '        txt_result.Text = ADInfo
+            '    Next
+            'End If
 
         Catch ex As Exception
-            txt_result.Text = ex.Message
+            txt_result.Text = "ERROR " + ex.Message
         End Try
 
     End Sub
@@ -107,4 +164,5 @@ Public Class FrmAD
         TxtQuery.Text = "LDAP://OU=Stellverstretungen,OU=Lehrpersonen,OU=Benutzer,DC=sekeinshoefe,DC=ch"
         txtPath.Text = "LDAP://seh.sekeinshoefe.ch"
     End Sub
+
 End Class
