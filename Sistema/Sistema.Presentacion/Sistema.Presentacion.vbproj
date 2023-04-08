@@ -120,6 +120,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\FrmAPI_JWT.Designer.vb">
+      <DependentUpon>FrmAPI_JWT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="API\FrmAPI_JWT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\FrmAPI_OauthSS.Designer.vb">
+      <DependentUpon>FrmAPI_OauthSS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="API\FrmAPI_OauthSS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Consultas\FrmConsultaVentas.Designer.vb">
       <DependentUpon>FrmConsultaVentas.vb</DependentUpon>
     </Compile>
@@ -246,6 +258,12 @@
     <Compile Include="Variables.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="API\FrmAPI_JWT.resx">
+      <DependentUpon>FrmAPI_JWT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\FrmAPI_OauthSS.resx">
+      <DependentUpon>FrmAPI_OauthSS.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\FrmConsultaVentas.resx">
       <DependentUpon>FrmConsultaVentas.vb</DependentUpon>
     </EmbeddedResource>

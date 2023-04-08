@@ -266,4 +266,20 @@ Public Class FrmPrincipal
     Private Sub HelpMenu_Click(sender As Object, e As EventArgs) Handles HelpMenu.Click
 
     End Sub
+
+    Private Sub NewMailToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewMailToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub JWTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JWTToolStripMenuItem.Click
+        Dim frm As New FrmAPI_JWT
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
+
+    Private Sub OAuthToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OAuthToolStripMenuItem.Click
+        Dim frm As New FrmAPI_OauthSS
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
 End Class
