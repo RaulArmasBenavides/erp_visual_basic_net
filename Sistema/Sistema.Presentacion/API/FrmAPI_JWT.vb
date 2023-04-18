@@ -7,7 +7,7 @@ Public Class FrmAPI_JWT
     End Sub
 
 
-    Public Async Sub GetToken()
+    Public Sub GetToken()
         Dim v As String = JWTHelper.GetZoomAuthorization()
         Dim oauth_token As String = v
         txt_result.Text = oauth_token

@@ -8,7 +8,7 @@ Public Class FrmAPI_OauthSS
 
     Public Sub GetToken()
         'For async :  Dim v As String = Await OauthHelper.GetTokenOauthServerToServer() 'async method , it forces to make async this method
-        '   Dim oa As New OauthHelper  'with delegate
+        'Dim oa As New OauthHelper  'with delegate
         Dim v As String = OauthHelper.GetTokenOauthServerToServer()
         Dim oauth_token As String = v
         txt_result.Text = oauth_token

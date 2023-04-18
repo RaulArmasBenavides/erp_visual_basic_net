@@ -1,4 +1,5 @@
 ﻿Imports System.DirectoryServices
+Imports Sistema.Negocio
 
 Public Class FrmAD
 
@@ -30,7 +31,7 @@ Public Class FrmAD
             search.PropertiesToLoad.Add("userAccountControl")
 
             Dim allUsers As SearchResultCollection = search.FindAll()
-            Dim ADInfo As String = "USERS BW2 ACTIVE DIRECTORY"
+            Dim ADInfo As String = "USERS FIRMA ACTIVE DIRECTORY"
             For Each result As SearchResult In allUsers
 
                 If (result.Properties.Contains("cn") AndAlso result.Properties.Contains("givenname")) Then
@@ -69,54 +70,14 @@ Public Class FrmAD
                 ADInfo = ADInfo + Environment.NewLine
                 txt_result.Text = ADInfo
             Next
-
-            'If Not chkAllProperties.Checked Then
-            '    If msproperty <> "" Then
-            '        Dim ADInfo As String = "USERS BW2 ACTIVE DIRECTORY"
-            '        For Each result As SearchResult In allUsers
-            '            If (result.Properties.Contains("cn") AndAlso result.Properties.Contains(msproperty)) Then
-            '                ADInfo = ADInfo + Environment.NewLine + result.Properties(msproperty)(0).ToString()
-            '            End If
-            '            txt_result.Text = ADInfo
-            '        Next
-            '    End If
-            'Else
-            '    'show all properties
-            '    Dim ADInfo As String = "USERS BW2 ACTIVE DIRECTORY (ALL PROPERTIES)"
-            '    For Each result As SearchResult In allUsers
-            '        For Each itemvprop As ICollection In result.Properties.Values
-            '            For Each item As String In itemvprop
-            '                'ADInfo = ADInfo  + Environment.NewLine
-            '                ADInfo = ADInfo + Environment.NewLine + item
-            '                ADInfo = ADInfo + "-------------------------------------" + Environment.NewLine
-            '            Next
-            '        Next
-            '        'ADInfo = ADInfo + Environment.NewLine + 
-            '        'If (result.Properties.Contains("cn") AndAlso result.Properties.Contains(msproperty)) Then
-            '        '    ADInfo = ADInfo + Environment.NewLine + result.Properties(msproperty)(0).ToString()
-            '        'End If
-            '        txt_result.Text = ADInfo
-            '    Next
-            'End If
-
         Catch ex As Exception
             txt_result.Text = "ERROR " + ex.Message
         End Try
-
     End Sub
-
-    'create And return New LDAP connection with desired settings 
-    'Private Shared Function createDirectoryEntry() As DirectoryEntry
-    '    Dim ldapConnection As DirectoryEntry = New DirectoryEntry("LDAP://bw2dev.local", "raul.armas", "BW2.Raul")
-    '    ldapConnection.Path = "LDAP://OU=Users,OU=Hosting,DC=bw2dev,DC=local"
-    '    ldapConnection.AuthenticationType = AuthenticationTypes.Secure
-    '    Return ldapConnection
-    'End Function
 
     Private Function createDirectoryEntry(ByVal path As String, ByVal query As String) As DirectoryEntry
         Dim ldapConnection As DirectoryEntry
         If b_UseCredentials Then
-            'ldapConnection = New DirectoryEntry(path, "raul.armas", "BW2.Raul")
             ldapConnection = New DirectoryEntry(path, TxtUser.Text.Trim(), TxtPassword.Text.Trim())
         Else
             ldapConnection = New DirectoryEntry(path)
@@ -161,8 +122,8 @@ Public Class FrmAD
     End Sub
 
     Private Sub DefaultValues()
-        TxtQuery.Text = "LDAP://OU=Stellverstretungen,OU=Lehrpersonen,OU=Benutzer,DC=sekeinshoefe,DC=ch"
-        txtPath.Text = "LDAP://seh.sekeinshoefe.ch"
+        TxtQuery.Text = CustomXMLReader.GetRegistryValue("ldapquery")
+        txtPath.Text = CustomXMLReader.GetRegistryValue("ldappath")
     End Sub
 
 End Class
