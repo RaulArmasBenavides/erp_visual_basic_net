@@ -1,4 +1,6 @@
-﻿Public Class FrmConsultaVentas
+﻿'Option Strict On
+Option Explicit On
+Public Class FrmConsultaVentas
     Private DtDetalle As New DataTable
     Private Sub Formato()
         DgvListado.Columns(0).Visible = False

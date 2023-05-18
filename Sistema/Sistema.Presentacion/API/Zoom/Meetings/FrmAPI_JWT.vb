@@ -1,6 +1,6 @@
 ﻿Imports Sistema.Negocio
 
-Public Class FrmAPI_JWT
+Public Class FrmGoogleCalendar
 
     Private Sub btnConnect_Click(sender As Object, e As EventArgs) Handles btnConnect.Click
         GetToken()

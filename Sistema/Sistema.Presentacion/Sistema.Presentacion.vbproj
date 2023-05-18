@@ -120,22 +120,34 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\FrmAPI_JWT.Designer.vb">
+    <Compile Include="API\Zoom\Meetings\FrmAPI_JWT.Designer.vb">
       <DependentUpon>FrmAPI_JWT.vb</DependentUpon>
     </Compile>
-    <Compile Include="API\FrmAPI_JWT.vb">
+    <Compile Include="API\Zoom\Meetings\FrmAPI_JWT.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="API\FrmAPI_OauthSS.Designer.vb">
+    <Compile Include="API\Zoom\Meetings\FrmAPI_OauthSS.Designer.vb">
       <DependentUpon>FrmAPI_OauthSS.vb</DependentUpon>
     </Compile>
-    <Compile Include="API\FrmAPI_OauthSS.vb">
+    <Compile Include="API\Zoom\Meetings\FrmAPI_OauthSS.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\FrmConsultaVentas.Designer.vb">
+    <Compile Include="API\Google\Calendar\FrmCalendarGoogle2.Designer.vb">
+      <DependentUpon>FrmCalendarGoogle2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="API\Google\Calendar\FrmCalendarGoogle2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\MicrosoftTeams\Meetings\FrmTeamsWU.Designer.vb">
+      <DependentUpon>FrmTeamsWU.vb</DependentUpon>
+    </Compile>
+    <Compile Include="API\MicrosoftTeams\Meetings\FrmTeamsWU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ERP\Ventas\FrmConsultaVentas.Designer.vb">
       <DependentUpon>FrmConsultaVentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\FrmConsultaVentas.vb">
+    <Compile Include="ERP\Ventas\FrmConsultaVentas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DsSistema2.Designer.vb">
@@ -143,46 +155,46 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DsSistema2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FrmCSV.Designer.vb">
+    <Compile Include="Util\FrmCSV.Designer.vb">
       <DependentUpon>FrmCSV.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmCSV.vb">
+    <Compile Include="Util\FrmCSV.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmArticulo.Designer.vb">
+    <Compile Include="ERP\Articulos\FrmArticulo.Designer.vb">
       <DependentUpon>FrmArticulo.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmArticulo.vb">
+    <Compile Include="ERP\Articulos\FrmArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCategoria.Designer.vb">
+    <Compile Include="ERP\Articulos\FrmCategoria.Designer.vb">
       <DependentUpon>FrmCategoria.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmCategoria.vb">
+    <Compile Include="ERP\Articulos\FrmCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCliente.Designer.vb">
+    <Compile Include="ERP\Clientes\FrmCliente.Designer.vb">
       <DependentUpon>FrmCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmCliente.vb">
+    <Compile Include="ERP\Clientes\FrmCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCliente_Venta.Designer.vb">
+    <Compile Include="ERP\Clientes\FrmCliente_Venta.Designer.vb">
       <DependentUpon>FrmCliente_Venta.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmCliente_Venta.vb">
+    <Compile Include="ERP\Clientes\FrmCliente_Venta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmIngreso.Designer.vb">
+    <Compile Include="ERP\Articulos\FrmIngreso.Designer.vb">
       <DependentUpon>FrmIngreso.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmIngreso.vb">
+    <Compile Include="ERP\Articulos\FrmIngreso.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLogin.Designer.vb">
+    <Compile Include="Seguridad\FrmLogin.Designer.vb">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmLogin.vb">
+    <Compile Include="Seguridad\FrmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPrincipal.Designer.vb">
@@ -191,34 +203,34 @@
     <Compile Include="FrmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmProveedor.Designer.vb">
+    <Compile Include="ERP\Proveedores\FrmProveedor.Designer.vb">
       <DependentUpon>FrmProveedor.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmProveedor.vb">
+    <Compile Include="ERP\Proveedores\FrmProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmProveedor_Ingreso.Designer.vb">
+    <Compile Include="ERP\Proveedores\FrmProveedor_Ingreso.Designer.vb">
       <DependentUpon>FrmProveedor_Ingreso.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmProveedor_Ingreso.vb">
+    <Compile Include="ERP\Proveedores\FrmProveedor_Ingreso.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRol.Designer.vb">
+    <Compile Include="Seguridad\FrmRol.Designer.vb">
       <DependentUpon>FrmRol.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmRol.vb">
+    <Compile Include="Seguridad\FrmRol.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmUsuario.Designer.vb">
+    <Compile Include="Seguridad\FrmUsuario.Designer.vb">
       <DependentUpon>FrmUsuario.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmUsuario.vb">
+    <Compile Include="Seguridad\FrmUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmVenta.Designer.vb">
+    <Compile Include="ERP\Ventas\FrmVenta.Designer.vb">
       <DependentUpon>FrmVenta.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmVenta.vb">
+    <Compile Include="ERP\Ventas\FrmVenta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -258,52 +270,58 @@
     <Compile Include="Variables.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="API\FrmAPI_JWT.resx">
+    <EmbeddedResource Include="API\Zoom\Meetings\FrmAPI_JWT.resx">
       <DependentUpon>FrmAPI_JWT.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="API\FrmAPI_OauthSS.resx">
+    <EmbeddedResource Include="API\Zoom\Meetings\FrmAPI_OauthSS.resx">
       <DependentUpon>FrmAPI_OauthSS.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consultas\FrmConsultaVentas.resx">
+    <EmbeddedResource Include="API\Google\Calendar\FrmCalendarGoogle2.resx">
+      <DependentUpon>FrmCalendarGoogle2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\MicrosoftTeams\Meetings\FrmTeamsWU.resx">
+      <DependentUpon>FrmTeamsWU.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ERP\Ventas\FrmConsultaVentas.resx">
       <DependentUpon>FrmConsultaVentas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCSV.resx">
+    <EmbeddedResource Include="Util\FrmCSV.resx">
       <DependentUpon>FrmCSV.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmArticulo.resx">
+    <EmbeddedResource Include="ERP\Articulos\FrmArticulo.resx">
       <DependentUpon>FrmArticulo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCategoria.resx">
+    <EmbeddedResource Include="ERP\Articulos\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCliente.resx">
+    <EmbeddedResource Include="ERP\Clientes\FrmCliente.resx">
       <DependentUpon>FrmCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCliente_Venta.resx">
+    <EmbeddedResource Include="ERP\Clientes\FrmCliente_Venta.resx">
       <DependentUpon>FrmCliente_Venta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmIngreso.resx">
+    <EmbeddedResource Include="ERP\Articulos\FrmIngreso.resx">
       <DependentUpon>FrmIngreso.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLogin.resx">
+    <EmbeddedResource Include="Seguridad\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmProveedor.resx">
+    <EmbeddedResource Include="ERP\Proveedores\FrmProveedor.resx">
       <DependentUpon>FrmProveedor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmProveedor_Ingreso.resx">
+    <EmbeddedResource Include="ERP\Proveedores\FrmProveedor_Ingreso.resx">
       <DependentUpon>FrmProveedor_Ingreso.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRol.resx">
+    <EmbeddedResource Include="Seguridad\FrmRol.resx">
       <DependentUpon>FrmRol.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmUsuario.resx">
+    <EmbeddedResource Include="Seguridad\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmVenta.resx">
+    <EmbeddedResource Include="ERP\Ventas\FrmVenta.resx">
       <DependentUpon>FrmVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">

@@ -125,7 +125,7 @@ Public Class FrmPrincipal
     End Property
 
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TsBarraInferior.Text = "Desarrollado por www.incanatoit.com, Usuario: " & Me.Nombre
+        TsBarraInferior.Text = "Desarrollado por Raúl Armas, Usuario: " & Me.Nombre
         MsgBox("Bienvenido " & Me.Nombre, vbOKOnly + vbInformation, "Bienvenido al Sistema")
         If (Me.Rol = "Administrador") Then
             MnuAlmacen.Enabled = True
@@ -271,15 +271,35 @@ Public Class FrmPrincipal
 
     End Sub
 
-    Private Sub JWTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JWTToolStripMenuItem.Click
-        Dim frm As New FrmAPI_JWT
+    Private Sub APIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles APIToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub AccessToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AccessToolStripMenuItem.Click
+        Dim frm As New FrmTeamsWU
         frm.MdiParent = Me
         frm.Show()
     End Sub
 
-    Private Sub OAuthToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OAuthToolStripMenuItem.Click
+    Private Sub CalendarsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CalendarsToolStripMenuItem.Click
+        Dim frm As New FrmCalendarGoogle2
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
+
+    Private Sub ServerToServerOauthToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ServerToServerOauthToolStripMenuItem.Click
         Dim frm As New FrmAPI_OauthSS
         frm.MdiParent = Me
         frm.Show()
+    End Sub
+
+    Private Sub JWTToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles JWTToolStripMenuItem1.Click
+        Dim frm As New FrmGoogleCalendar
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
+
+    Private Sub IndexToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IndexToolStripMenuItem.Click
+
     End Sub
 End Class

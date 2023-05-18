@@ -67,7 +67,7 @@ Public Class FrmAD
                 If (result.Properties.Contains("cn") AndAlso result.Properties.Contains("homedrive")) Then
                     ADInfo = ADInfo + Environment.NewLine + result.Properties("homedrive")(0).ToString()
                 End If
-                ADInfo = ADInfo + Environment.NewLine
+                ADInfo += Environment.NewLine
                 txt_result.Text = ADInfo
             Next
         Catch ex As Exception

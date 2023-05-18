@@ -109,8 +109,9 @@ Public Class DCategoria
 
     Public Sub Activar(Id As Integer)
         Try
-            Dim Comando As New SqlCommand("categoria_activar", MyBase.conn)
-            Comando.CommandType = CommandType.StoredProcedure
+            Dim Comando As New SqlCommand("categoria_activar", MyBase.conn) With {
+                .CommandType = CommandType.StoredProcedure
+            }
             Comando.Parameters.Add("@idcategoria", SqlDbType.Int).Value = Id
             MyBase.conn.Open()
             Comando.ExecuteNonQuery()

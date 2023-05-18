@@ -63,7 +63,7 @@ Public Class Conexion
         Dim cadena As String
         cadena = "Server=" & Me.Servidor & "; Database=" & Me.Base & ";"
         If Me.Seguridad Then
-            cadena = cadena & "Integrated Security= SSPI"
+            cadena &= "Integrated Security= SSPI"
         Else
             cadena = cadena & "User Id=" & Me.Usuario & ";Password=" & Me.Clave
         End If

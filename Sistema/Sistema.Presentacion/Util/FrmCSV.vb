@@ -79,7 +79,7 @@ Public Class FrmCSV
                 columnIndex = 0
                 For Each campoActual As String In etiquetaTitulosFinal
                     valor = filasDatos(columnIndex)
-                    columnIndex = columnIndex + 1
+                    columnIndex += 1
                     'Quitamos el posible carácter de inicio y fin de valor
                     If separadorCampos <> "" Then
                         valor = valor.TrimEnd(Convert.ToChar(separadorCampos))
@@ -151,7 +151,7 @@ Public Class FrmCSV
                     End If
                     tablaDatos.Columns.Add(New DataColumn(valor))
                     lista.Add(valor)
-                    numero = numero + 1
+                    numero += 1
                 Next
                 etiquetaTitulosFinal = lista.ToArray()
             End If
@@ -173,7 +173,7 @@ Public Class FrmCSV
                 columnIndex = 0
                 For Each campoActual As String In etiquetaTitulosFinal
                     valor = filasDatos(columnIndex)
-                    columnIndex = columnIndex + 1
+                    columnIndex += 1
                     'Quitamos el posible carácter de inicio y fin de valor
                     If separadorCampos <> "" Then
                         valor = valor.TrimEnd(Convert.ToChar(separadorCampos))
