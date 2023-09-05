@@ -126,7 +126,7 @@ Public Class FrmPrincipal
 
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TsBarraInferior.Text = "Desarrollado por Raúl Armas, Usuario: " & Me.Nombre
-        MsgBox("Bienvenido " & Me.Nombre, vbOKOnly + vbInformation, "Bienvenido al Sistema")
+        'MsgBox("Bienvenido " & Me.Nombre, vbOKOnly + vbInformation, "Bienvenido al Sistema")
         If (Me.Rol = "Administrador") Then
             MnuAlmacen.Enabled = True
             MnuIngresos.Enabled = True
@@ -301,5 +301,11 @@ Public Class FrmPrincipal
 
     Private Sub IndexToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IndexToolStripMenuItem.Click
 
+    End Sub
+
+    Private Sub SophosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SophosToolStripMenuItem.Click
+        Dim frm As New FrmSophos
+        frm.MdiParent = Me
+        frm.Show()
     End Sub
 End Class

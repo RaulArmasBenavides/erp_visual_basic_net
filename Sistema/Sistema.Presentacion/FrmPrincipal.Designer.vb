@@ -61,6 +61,9 @@ Partial Class FrmPrincipal
         Me.LDAPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.APIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AuthToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.JWTToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ServerToServerOauthToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TeamsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AccessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GoogleAPIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -79,9 +82,7 @@ Partial Class FrmPrincipal
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.TsBarraInferior = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.AuthToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.JWTToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ServerToServerOauthToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SophosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -265,13 +266,13 @@ Partial Class FrmPrincipal
         'ReadCSVToolStripMenuItem
         '
         Me.ReadCSVToolStripMenuItem.Name = "ReadCSVToolStripMenuItem"
-        Me.ReadCSVToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReadCSVToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
         Me.ReadCSVToolStripMenuItem.Text = "Read CSV"
         '
         'JustifyTextToolStripMenuItem
         '
         Me.JustifyTextToolStripMenuItem.Name = "JustifyTextToolStripMenuItem"
-        Me.JustifyTextToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.JustifyTextToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
         Me.JustifyTextToolStripMenuItem.Text = "Justify Text"
         '
         'MailToolStripMenuItem
@@ -284,7 +285,7 @@ Partial Class FrmPrincipal
         'NewMailToolStripMenuItem
         '
         Me.NewMailToolStripMenuItem.Name = "NewMailToolStripMenuItem"
-        Me.NewMailToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NewMailToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
         Me.NewMailToolStripMenuItem.Text = "New Mail"
         '
         'ShellToolStripMenuItem
@@ -315,7 +316,7 @@ Partial Class FrmPrincipal
         '
         'APIToolStripMenuItem
         '
-        Me.APIToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.TeamsToolStripMenuItem, Me.GoogleAPIToolStripMenuItem})
+        Me.APIToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.TeamsToolStripMenuItem, Me.GoogleAPIToolStripMenuItem, Me.SophosToolStripMenuItem})
         Me.APIToolStripMenuItem.Name = "APIToolStripMenuItem"
         Me.APIToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.APIToolStripMenuItem.Text = "API"
@@ -327,6 +328,25 @@ Partial Class FrmPrincipal
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.ToolStripMenuItem1.Text = "Zoom"
         '
+        'AuthToolStripMenuItem
+        '
+        Me.AuthToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.JWTToolStripMenuItem1, Me.ServerToServerOauthToolStripMenuItem})
+        Me.AuthToolStripMenuItem.Name = "AuthToolStripMenuItem"
+        Me.AuthToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
+        Me.AuthToolStripMenuItem.Text = "Auth"
+        '
+        'JWTToolStripMenuItem1
+        '
+        Me.JWTToolStripMenuItem1.Name = "JWTToolStripMenuItem1"
+        Me.JWTToolStripMenuItem1.Size = New System.Drawing.Size(199, 22)
+        Me.JWTToolStripMenuItem1.Text = "JWT"
+        '
+        'ServerToServerOauthToolStripMenuItem
+        '
+        Me.ServerToServerOauthToolStripMenuItem.Name = "ServerToServerOauthToolStripMenuItem"
+        Me.ServerToServerOauthToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.ServerToServerOauthToolStripMenuItem.Text = "Server to Server (Oauth)"
+        '
         'TeamsToolStripMenuItem
         '
         Me.TeamsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccessToolStripMenuItem})
@@ -337,7 +357,7 @@ Partial Class FrmPrincipal
         'AccessToolStripMenuItem
         '
         Me.AccessToolStripMenuItem.Name = "AccessToolStripMenuItem"
-        Me.AccessToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AccessToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
         Me.AccessToolStripMenuItem.Text = "Access"
         '
         'GoogleAPIToolStripMenuItem
@@ -350,12 +370,12 @@ Partial Class FrmPrincipal
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(126, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
         '
         'CalendarsToolStripMenuItem
         '
         Me.CalendarsToolStripMenuItem.Name = "CalendarsToolStripMenuItem"
-        Me.CalendarsToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.CalendarsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CalendarsToolStripMenuItem.Text = "Calendars"
         '
         'HelpMenu
@@ -369,7 +389,7 @@ Partial Class FrmPrincipal
         '
         Me.ContentsToolStripMenuItem.Name = "ContentsToolStripMenuItem"
         Me.ContentsToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F1), System.Windows.Forms.Keys)
-        Me.ContentsToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
+        Me.ContentsToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.ContentsToolStripMenuItem.Text = "&Contents"
         '
         'IndexToolStripMenuItem
@@ -377,7 +397,7 @@ Partial Class FrmPrincipal
         Me.IndexToolStripMenuItem.Image = CType(resources.GetObject("IndexToolStripMenuItem.Image"), System.Drawing.Image)
         Me.IndexToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.IndexToolStripMenuItem.Name = "IndexToolStripMenuItem"
-        Me.IndexToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
+        Me.IndexToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.IndexToolStripMenuItem.Text = "&Index"
         '
         'SearchToolStripMenuItem
@@ -385,18 +405,18 @@ Partial Class FrmPrincipal
         Me.SearchToolStripMenuItem.Image = CType(resources.GetObject("SearchToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SearchToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
-        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
+        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.SearchToolStripMenuItem.Text = "&Search"
         '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(181, 6)
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(165, 6)
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.AboutToolStripMenuItem.Text = "&About ..."
         '
         'MnuSalir
@@ -451,24 +471,11 @@ Partial Class FrmPrincipal
         Me.TsBarraInferior.Size = New System.Drawing.Size(262, 17)
         Me.TsBarraInferior.Text = "Desarrollado por Raúl Marcelo Armas Benavides "
         '
-        'AuthToolStripMenuItem
+        'SophosToolStripMenuItem
         '
-        Me.AuthToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.JWTToolStripMenuItem1, Me.ServerToServerOauthToolStripMenuItem})
-        Me.AuthToolStripMenuItem.Name = "AuthToolStripMenuItem"
-        Me.AuthToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.AuthToolStripMenuItem.Text = "Auth"
-        '
-        'JWTToolStripMenuItem1
-        '
-        Me.JWTToolStripMenuItem1.Name = "JWTToolStripMenuItem1"
-        Me.JWTToolStripMenuItem1.Size = New System.Drawing.Size(199, 22)
-        Me.JWTToolStripMenuItem1.Text = "JWT"
-        '
-        'ServerToServerOauthToolStripMenuItem
-        '
-        Me.ServerToServerOauthToolStripMenuItem.Name = "ServerToServerOauthToolStripMenuItem"
-        Me.ServerToServerOauthToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
-        Me.ServerToServerOauthToolStripMenuItem.Text = "Server to Server (Oauth)"
+        Me.SophosToolStripMenuItem.Name = "SophosToolStripMenuItem"
+        Me.SophosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SophosToolStripMenuItem.Text = "Sophos"
         '
         'FrmPrincipal
         '
@@ -550,4 +557,5 @@ Partial Class FrmPrincipal
     Friend WithEvents AuthToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents JWTToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ServerToServerOauthToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SophosToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -1,5 +1,5 @@
 ﻿
-
+Option Strict On
 Option Explicit On
 Imports System.IO
 Imports System.Net
@@ -33,25 +33,13 @@ Public Class OauthHelper
         ' Create a request object
         Dim request As WebRequest = WebRequest.Create(url)
         request.Method = "POST"
-        ' Set the Basic Authentication header
         Dim credentials As String = Convert.ToBase64String(Encoding.ASCII.GetBytes($"{client_id}:{client_secret}"))
         request.Headers("Authorization") = $"Basic {credentials}"
-        'Set the request content type and data
-        'Dim postData As String = $"grant_type=account_credential&account_id={account_id}"
-        'Dim byteArray As Byte() = Encoding.UTF8.GetBytes(postData)
-        'request.ContentType = "application/x-www-form-urlencoded"
-        'request.ContentLength = byteArray.Length
-        'Write the request data to the request stream
-        Using requestStream As Stream = request.GetRequestStream()
-            ' requestStream.Write(byteArray, 0, byteArray.Length)
-        End Using
-
         ' Get the response from the server
         Dim response As WebResponse = request.GetResponse()
         Using responseStream As Stream = response.GetResponseStream()
             Using reader As New StreamReader(responseStream)
                 Dim responseText As String = reader.ReadToEnd()
-                ' Do something with the response text
                 Dim jsonDict As Dictionary(Of String, Object) = jss.Deserialize(Of Dictionary(Of String, Object))(responseText)
                 meetToken = CStr(jsonDict("access_token"))
             End Using
@@ -64,8 +52,8 @@ Public Class OauthHelper
         Dim meetToken As String = String.Empty
         Try
             Dim jss As New JavaScriptSerializer
-            Dim teamsClientId As String = crede.TeamsClientId 'GetPortalRegistryValueMeetingPlatforms("c6c72552-60f3-4561-b567-ee420bb01c7c") 'TeamsClientId 
-            Dim teamsClientSecret As String = crede.Client_secret 'GetPortalRegistryValueMeetingPlatforms("d56d827c-c39f-4573-91b1-4219320dffd7") 'TeamsClientSecret
+            Dim teamsClientId As String = crede.TeamsClientId
+            Dim teamsClientSecret As String = crede.Client_secret
             Dim userEmail As String = crede.UsuarioEmail
             Dim userPassword As String = crede.Password
             Dim requestTeams As WebRequest = WebRequest.Create("https://login.microsoftonline.com/common/oauth2/token")
@@ -133,15 +121,14 @@ Public Class OauthHelper
     Public Shared Function GetGoogleAuthorization() As String
         Dim jss As New JavaScriptSerializer
         Dim tokenEndpoint As String = "https://oauth2.googleapis.com/token"
-        Dim clientId As String = "101821102064205189688"
-        Dim clientSecret As String = "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCVHdqNzaYogz90\nzxufGNzsP2sPp2S8TmywEWpruVRs+2AvL6z55915eY/Y1huuJGhHE4+hQTeFA9hT\nXKUJnpv10iC9vUSzcK5Sd7GUBf6MHW505SN61jNL5IxeQoe3gv1alW6AuluYCiIm\nUZ7FmA1Y1HcFrDpsFEE5lQGJbiWL1xzZlhMstS+UIW7ilGbs9MgToQMi5kWtO2OZ\nvMaOZTHzDjwFsRF7S/RfjJ2qZo+QeTFLNj4ABHDDHAwGmGYjl1zuMFlwRmsmeg9u\nnOb2FibeibNm0/haYPQw6z5x7O3gSGEQtyyVaqN0vUdZzHnz4kaygxmj7p6RtNyV\nGaDa2mKHAgMBAAECggEABhCYRoMyOlyYNJ6Fz5M5zQwJRTI4OSZxajnTG72GbwZM\nU677OJDTI7ErhhSzPIJzkUx834ChCvJslntipQED89wPg9gSVsAC/wyqNsyFnVpH\nF08IgeL7ZB9QDDdlgLO9rTT9sROjTQxAdlGEhSHZjR7bFmp6V9H9EyP504ac1VKj\nCpfgbpXF4sFm7Thwii/AGfsoWnTw/YZyzfTFkBba9uq47oihA6EdFNnAw1j6rSR1\n5Momb5WBVSqCW9B3ADbEuMvxa9YHwAe4KAcTdRG1/T3WXY89hiTeW5ChKEcS5TJT\n9+WbVCTHc7fJdCVi84qXhI0NPqUJBGNlM2gAmIoKzQKBgQDNTmVZOpKISU8BBiOf\n9RDlPw9BG551YqpstE39nwSuSj9mZJjNfXHFGoID15kNrF+y4xs3NQJbxUQ8QzUe\nVek1O469pJcwwEZoYpsT34bkQ/V6PlJfkqz4BonSAqB7YPZcvDJQ5trZnKrxOHGO\ntHL6PdpKSL4fboRILSOtoPODNQKBgQC576h9Asdql0q0S9Bo+qXEaStkndiaIHUt\nN5bhcGrVab0Igcd9Whafc0Dm1ujH8SXtgNUJy7vuagyuKlyfkZSEnLfF+rOjRXRR\npE61KDcWhm1EmN2AQKFaSwk8U53HOnwdkU5tvNyQmnAOld6VTA9lH/GU2QaPCi3h\nyXjOoVNqSwKBgHj7GHfjLxQGdvq4fme1BtbAOSH5v3+Wu6zA9zBb82stL30MDIsS\nv+cRPso60uMez2nfsFrw7snbTeFhDT0qDPmkdfHEup8svpCmgpHMZ3W9ojr93Jab\nHTguyioqCB2MPsDY2aGY2B/h1U2+IBSiuxpBNpANm5N0EZlimCKptLV9AoGALpL5\ngVbQ3MJI1CCpc6JVI320gN+JAhJfR5RFFvMxz4NM9nSLo7qNMCOOfkQWyv58oaFD\nu9BsoqutwXKbAN1WdmFLJyxFEwCywkCF9pq8Mcg6VpRz50xJHnTtO082llDwBff/\nzT0hgpcsunqP5pXGxW3a9Y3nNq02EPiGaju+yUECgYEAiIiU1+ekaWZtSj2V6f60\nTVlzyWXWX2izi4rvS+iMhquiWP67AHKzYwsT98sS9fGuSsdkhOeh3J61eF2rb+7Z\nAeox9ZFYoEil2NhwU0RTKXDT/sPN18d9f6tRO2ZvvR/mbXbXxjV8Qnbr10bxSagJ\ndyJPkvykIrdu/2XXenKoNm0="
+        Dim clientId As String = "104109131828044807705"
+        Dim clientSecret As String = "MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDVznEPem83epAY\ng7CXv0ThJoVDOYvP9iat2xi7WmnAvqj9UETolbmfUicMbwiXwlQpVXat6qrpJbIO\nnxU6s5Sa7tAdZH1rNFCOZkYtpbOovfrbYPcqLLHDNLMPgOiwCKUR4/4NDngKCG+r\nq/baoTToN2bFSwxpALG+4SVQcnttvPlGpcrYr5VVkiMMGqHUHWDFg+jO3mqq8G21\ne8SdUm2uEaoVnC23nwqglLk+DPY03StNDIVcNlYa2JOaeh121aiuM2zXUFB99zEH\nqmELNgqHM8ADO48dOoHf1SdIhQni1KAyQQjwGDcU0KhVf1ZxI8zJwpK/nJLOoSH8\n12VUalNhAgMBAAECggEAFRURaG+P8mZDOauYmOn7EoFwIAgXXXb96uRBDM5WQbN7\nKdlFpjKHVmqtH4h+TiqTDm1XMcCDQFCffVoZ54soItvcCR3s0QqcS+JRVrRxYfjz\nuLiXvqCgGanDY0q4hw0fK8OxvBtaYlDhJAolofrF4wT9fQRQsbToEfSU75kOSyxq\nOwYbvkAL6hOuB+Y7KTY3SHw8a4xACuiQLthQB7qIN4fstYtoBdCE0iLEaEf5THu3\nZpbF7cGFK+GvUbbPIwdeM8sxnLwjcohKBJJU/n7you5V0TDGwYqMizDyusIEDboq\nctmzwjTpopAvKW5TGyidwqj7skBn7m16hib9vDdSsQKBgQDsUyWdzQpheXLS3lFZ\nGdfK4npy1RRY0iQ1DJulV8eAqpiirfePri18nJmqVS+cZAiX8aRYaep27k2MbI/E\n4+gNBp3OZosFLPZl+6/HTDmTqqPUpIHCXOLnMg35CkfXR4DPmHWbTGiRpRFETjkY\nE+7J+VQzKM2l99GYBHkZOI/KyQKBgQDnm1q/0tEFEezcEKi6dCigmsTkPet7KodO\n1m665XRtRgUTvv0kwfeV7q8vO7k1jNnZVY6Pvo09J2EJ1mlRJIggOAD/jIA9E/yz\ncSQVnjomJsWCHN9gX26+6CaOXrGNsOsqaqCcQnR6Yt6/KtbJRg2qutnu1h5Qza7e\nX74FTyR32QKBgFK5hFhptvGKDtyrv/QdrMEzaEOcPSQeY1hCkpVdVdO/Y/DGTvt3\nsCqHsu7CJQlspulxR+M/KDj7kB/QvL7iPI+aulDO6mkkZRgr80sjbqA3QmQkNdvw\noejmR6fepmlAeWGx77EuHQimrJWpgCjiiVsgMQ47gUlQp4i8QBvJBeSpAoGAHnsK\noW4sRf+K7ZdfrVI2OpTDzsn7YLVDI3QDFKO4A92QM34SMLE6VUgZVB0HDe4giYLC\nBVbtnZu+IJ5QM/ab16mnL/qcse0cd70vI400V+sIWUxVdYh5ubQxxtDdiyk6edWY\nl5gDXkv+xqfrpoeKqup2XgFd8gJvviJZjrdQtFkCgYAmE3eT2JvL9u0qDMZBZJb9\nTE+2xVgdghyiBTDn5tzeq0l1Od07NG9C1vUBQ4YJTp8EaG3B2JwDeKCcwzgLFhaY\nqOEa/Hv5ARxsr6XsAQOkNFugkLdSobV7CHdRy+ROrgYZvPJQnwXidI1Qm7JcD878\nxPpXSJ0ZmJkeOXglgwMiNQ=="
         Dim scope As String = "https://www.googleapis.com/auth/calendar.events"
-        Dim serviceAccountEmail As String = "mytestservicemeeting@amplified-album-299218.iam.gserviceaccount.com"
+        Dim serviceAccountEmail As String = "bw2serviceaccount@projectappointments.iam.gserviceaccount.com"
 
         Dim postData As String = $"grant_type=client_credentials" &
             $"&client_id={HttpUtility.UrlEncode(clientId)}" &
             $"&client_secret={HttpUtility.UrlEncode(clientSecret)}" &
-            $"&scope={HttpUtility.UrlEncode(scope)}" &
             $"&subject={HttpUtility.UrlEncode(serviceAccountEmail)}"
 
         Dim request As WebRequest = WebRequest.Create(tokenEndpoint)
@@ -151,18 +138,13 @@ Public Class OauthHelper
         request.ContentLength = 0
         Dim postDataBytes As Byte() = Encoding.UTF8.GetBytes(postData)
         request.ContentLength = postDataBytes.Length
-
         Using requestStream As Stream = request.GetRequestStream()
             requestStream.Write(postDataBytes, 0, postDataBytes.Length)
         End Using
-
         Dim response As WebResponse = request.GetResponse()
         Dim responseStream As Stream = response.GetResponseStream()
         Dim responseReader As New StreamReader(responseStream)
         Dim responseJson As String = responseReader.ReadToEnd()
-
-        ' Parsea la respuesta del token de acceso
-        ' Dim tokenObject As JObject = JObject.Parse(responseJson)
         Dim tokenObject As Dictionary(Of String, Object) = jss.Deserialize(Of Dictionary(Of String, Object))(responseJson)
         Dim accessToken As String = tokenObject("access_token").ToString()
         Return accessToken
@@ -171,23 +153,20 @@ Public Class OauthHelper
 
     Public Shared Function GetGoogleAuthorizationFile() As String
 
-        Dim credentialsFile As String = "C://credenciales.json"
+        Dim credentialsFile As String = "C://credenciales2.json"
         Dim scope As String = CalendarService.Scope.Calendar
-
         Dim credential As ServiceAccountCredential
-
         Using stream = New FileStream(credentialsFile, FileMode.Open, FileAccess.Read)
-            credential = GoogleCredential.FromStream(stream).CreateScoped(scope).UnderlyingCredential
+            credential = CType(GoogleCredential.FromStream(stream).CreateScoped(scope).UnderlyingCredential, ServiceAccountCredential)
         End Using
-
         Dim service = New CalendarService(New BaseClientService.Initializer() With {
             .HttpClientInitializer = credential,
             .ApplicationName = "VB.NET Google Calendar API"
         })
-
         Dim accessToken = credential.GetAccessTokenForRequestAsync().Result
-
-        'Console.WriteLine("Token de acceso: {0}", accessToken)
         Return accessToken
     End Function
+
+
+
 End Class

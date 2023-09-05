@@ -1,4 +1,6 @@
-﻿Imports Sistema.Datos
+﻿Option Strict On
+Option Explicit On
+Imports Sistema.Datos
 Imports Sistema.Entidades
 Public Class NCategoria
     Public Function Listar() As DataTable

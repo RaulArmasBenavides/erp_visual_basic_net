@@ -1,4 +1,6 @@
-﻿Imports System.Data.SqlClient
+﻿Option Strict On
+Option Explicit On
+Imports System.Data.SqlClient
 Public Class DRol
     Inherits Conexion
 

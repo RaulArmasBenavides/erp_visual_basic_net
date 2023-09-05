@@ -33,7 +33,10 @@ Public Class FrmAD
             Dim allUsers As SearchResultCollection = search.FindAll()
             Dim ADInfo As String = "USERS FIRMA ACTIVE DIRECTORY"
             For Each result As SearchResult In allUsers
-
+                If result.Path.Contains("UnidadOrganizativa1") Then
+                    MsgBox("It is organizational unit skip")
+                    Continue For ' Saltar a la siguiente iteración del bucle
+                End If
                 If (result.Properties.Contains("cn") AndAlso result.Properties.Contains("givenname")) Then
                     ADInfo = ADInfo + Environment.NewLine + "Nachname " + result.Properties("givenname")(0).ToString()
                 End If

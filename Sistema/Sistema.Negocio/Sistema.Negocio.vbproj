@@ -105,7 +105,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\BankClientAPI.vb" />
+    <Compile Include="API\SophosClientAPI.vb" />
+    <Compile Include="API\GoogleMeetingCreator.vb" />
     <Compile Include="CustomXMLReader.vb" />
     <Compile Include="Helper\ActiveDirectoryHelper.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

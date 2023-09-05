@@ -1,4 +1,6 @@
-﻿Imports System.IdentityModel.Tokens.Jwt
+﻿Option Strict On
+Option Explicit On
+Imports System.IdentityModel.Tokens.Jwt
 Imports System.Web.Script.Serialization
 Imports Microsoft.IdentityModel.Tokens
 

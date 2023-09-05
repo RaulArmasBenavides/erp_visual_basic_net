@@ -1,4 +1,6 @@
-﻿Imports Sistema.Entidades
+﻿Option Strict On
+Option Explicit On
+Imports Sistema.Entidades
 Imports System.Data.SqlClient
 Public Class DUsuario
     Inherits Conexion
